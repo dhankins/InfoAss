@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link href="{{STATIC_URL}}fileaccess/styles.css" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
+    </head>
+	<body>
+    	<div class="main-div">
+            <div class="header-div">
+                <h1>CSE465 Team 7 File List</h1>
+            </div>
+
+            <div class="content-div">
+        		<a id="logout-link" href="{% url 'logout_user' %}">Log Out</a>
+                <a id="addfile-link" href="{% url 'new_file' %}">Add a new file?</a>
+
+        		<br/>
+        		<br/>
+
+        		<table class="file_table">
+                    <tr>
+                        <td>File Name</td>
+                        <td>Download File?</td>
+                        <td>Edit File?</td>
+                        <td>Delete File?</td>
+                    </tr>
+        			{% for docObj in documents %}
+        				<tr>
+        					<td>{{ docObj.fileName }}</td>
+        					<td><a href="{% url 'download_file' docObj.id %}">Download</a></td>
+        					<td><a href="{% url 'edit_file' docObj.id %}">Edit</a></td>
+                            <td><a href="{% url 'delete_file' docObj.id %}">Delete</a></td>
+        				</tr>
+        			{% endfor %}
+        		</table>
+            </div>
+        </div>
+    </body>
+</html>

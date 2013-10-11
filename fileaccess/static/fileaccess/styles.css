@@ -1,0 +1,206 @@
+
+html { 
+	height:100%; 
+}
+
+p, h2, form, button {
+	border:0; 
+	margin:0; 
+	padding:0;
+}
+
+a {
+	text-decoration:none;
+}
+
+a:hover {
+	color: #f15a29;
+}
+
+.spacer {
+	clear:both; 
+	height:1px;
+}
+
+body {
+	margin:0px;
+	height:100%;
+	font-family:'Lato', sans-serif;
+	font-size:14px;
+	font-weight:300;
+}
+
+h1 {
+	margin:0px;
+    font-family: 'Lato', sans-serif;
+    font-size: 36px;
+    font-weight:900;
+    color:white;
+    line-height:200px;
+}
+
+/* --------- Main Divs ---------- */
+.main-div {
+	margin:0px auto;
+	width:1000px;
+	height:100%;
+	text-align:center;
+	overflow:hidden;
+}
+
+.header-div {
+	float:top;
+	text-align:center;
+	height:200px;
+	background-color:#7BBBB4;
+}
+
+.content-div {
+	background-color:#EDEBE6;
+	padding-top:1px;
+	height:100%;
+	overflow:hidden;
+}
+
+/* ----------- My Form block ----------- */
+.myform {
+	margin:0 auto;
+	width:400px;
+	padding:14px;
+	margin-top:50px;
+}
+
+/* ----------- stylized block ----------- */
+#stylized {
+	border:solid 2px #b7ddf2;
+	background:#ebf4fb;
+}
+
+#stylized h2 {
+	font-size:16px;
+	font-weight:900;
+	margin-bottom:8px;
+}
+
+#stylized p {
+	font-size:11px;
+	color:#666666;
+	margin-bottom:20px;
+	border-bottom:solid 1px #b7ddf2;
+	padding-bottom:10px;
+}
+
+#stylized label {
+	display:block;
+	font-weight:bold;
+	text-align:right;
+	width:140px;
+	float:left;
+}
+
+#stylized .small {
+	color:#666666;
+	display:block;
+	font-size:11px;
+	font-weight:normal;
+	text-align:right;
+	width:140px;
+}
+
+#stylized input {
+	float:left;
+	font-size:12px;
+	padding:4px 2px;
+	border:solid 1px #aacfe4;
+	width:200px;
+	margin:2px 0 20px 10px;
+}
+
+#stylized button {
+	clear:both;
+	margin-left:150px;
+	width:125px;
+	height:31px;
+	background:#666666;
+	text-align:center;
+	line-height:31px;
+	color:#FFFFFF;
+	font-size:11px;
+	font-weight:bold;
+}
+
+#logout-link {
+	float:right;
+	width:30%;
+	margin:20px 50px 20px 0px;
+}
+
+#addfile-link {
+	float:left;
+	width:30%;
+	margin:20px 0px 20px 50px;
+}
+
+#override-stylized label {
+	width:100px;
+}
+
+#override-stylized input {
+	margin:0px 0px 20px 10px;
+	width:100px;
+}
+
+/* ----------------- TABLE GENERATOR ------------------ */
+.file_table {
+	margin:0px auto;
+	padding:0px;
+	width:90%;
+	/*border:1px solid #000000;*/
+	border-spacing:0px;
+}
+
+.file_table tr:nth-child(odd) { 
+	background-color:#c9c9c9; 
+}
+
+.file_table tr:nth-child(even) { 
+	background-color:#ffffff; 
+}
+
+.file_table td {
+	vertical-align:middle;
+	border:1px solid #000000;
+	border-width:0px 1px 1px 0px;
+	text-align:center;
+	padding:12px;
+	font-size:14px;
+	font-family:'Lato', sans-serif;
+	font-weight:300;
+	color:#000000;
+}
+
+.file_table tr:first-child td {
+	background-color:#f15a29;
+	text-align:center;
+	border-width:0px 1px 1px 0px;
+	font-size:19px;
+	font-family:'Lato', sans-serif;
+	font-weight:900;
+	color:#ffffff;
+}
+
+.file_table tr:first-child td:last-child {
+	border-width:0px 0px 1px 0px;
+}
+
+.file_table tr td:last-child {
+	border-width:0px 0px 1px 0px;
+}
+/*top, right, bottom, left*/
+.file_table tr:last-child td {
+	border-width:0px 1px 0px 0px;
+}
+
+.file_table tr:last-child td:last-child {
+	border-width:0px 0px 0px 0px;
+}

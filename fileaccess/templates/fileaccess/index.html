@@ -1,0 +1,39 @@
+<html>
+	<head>
+        <link href="{{STATIC_URL}}fileaccess/styles.css" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <div class="main-div">
+            <div class="header-div">
+                <h1>CSE465 Team 7 File Share Login</h1>
+            </div>
+            <div class="content-div">
+                <div id="stylized" class="myform">
+                    <form action="{% url 'login_user' %}" method="POST">
+                    	{% csrf_token %}
+                        <!-- {{ form.as_p }} -->
+                        <h2>Sign-In Form</h2>
+                        <p>Please sign in below</p>
+                        {{ form.non_field_errors }}
+
+                        {{ form.username.errors }}
+                        <label>Username
+                            <span class="small">Please enter your username</span>
+                        </label>
+                        {{ form.username }}
+
+                        {{ form.password.errors }}
+                        <label>Password
+                            <span class="small">Please enter your password</span>
+                        </label>
+                        {{ form.password }}
+
+                        <button type="submit">Sign-In</button>
+                        <div class="spacer"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

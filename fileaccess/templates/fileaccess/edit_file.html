@@ -1,0 +1,53 @@
+<html>
+	<head>
+        <link href="{{STATIC_URL}}fileaccess/styles.css" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <div class="main-div">
+            <div class="header-div">
+                <h1>CSE465 Team 7 Edit File</h1>
+            </div>
+
+            <div class="content-div">
+                <a id="logout-link" href="{% url 'logout_user' %}">Log Out</a>
+                
+                <div id="stylized" class="myform">
+                    <form action="{% url 'edit_file' document.id %}" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <h2>New File Form</h2>
+                        <p>Please fill in the fields below.</p>
+                        {{ form.non_field_errors }}
+
+                        {{ form.fileName.errors }}
+                        <label>File Name
+                            <span class="small">Please enter a file name</span>
+                        </label>
+                        {{ form.fileName }}
+
+                        {{ form.fileUpload.errors }}
+                        <label>File
+                            <span class="small">Please select a file</span>
+                        </label>
+                        {{ form.fileUpload }}
+
+                        {{ form.attributes.errors }}
+                        <label>Attributes
+                            <span class="small">Please select required attributes</span>
+                        </label>
+                        
+                        {% for choice in form.attributes %}
+                            <div id="override-stylized">
+                                <label>{{ choice.choice_label}}</label>
+                                {{ choice.tag }}
+                            </div>
+                        {% endfor %}
+
+                        <button type="submit">Finish</button>
+                        <div class="spacer"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
