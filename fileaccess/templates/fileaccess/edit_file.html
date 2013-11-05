@@ -1,6 +1,7 @@
 <html>
 	<head>
-        <link href="{{STATIC_URL}}fileaccess/styles.css" rel="stylesheet" type="text/css">
+        {% load static from staticfiles %}
+        <link href="{% static 'fileaccess/styles.css' %}" rel="stylesheet" type="text/css">
         <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
     </head>
     <body>
@@ -17,33 +18,33 @@
                         {% csrf_token %}
                         <h2>New File Form</h2>
                         <p>Please fill in the fields below.</p>
-                        {{ form.non_field_errors }}
 
-                        {{ form.fileName.errors }}
                         <label>File Name
                             <span class="small">Please enter a file name</span>
                         </label>
                         {{ form.fileName }}
 
-                        {{ form.fileUpload.errors }}
                         <label>File
                             <span class="small">Please select a file</span>
                         </label>
                         {{ form.fileUpload }}
 
-                        {{ form.attributes.errors }}
                         <label>Attributes
                             <span class="small">Please select required attributes</span>
                         </label>
                         
-                        {% for choice in form.attributes %}
-                            <div id="override-stylized">
+                        <div id="override-stylized">
+                            {% for choice in form.attributes %}
                                 <label>{{ choice.choice_label}}</label>
                                 {{ choice.tag }}
-                            </div>
-                        {% endfor %}
+                            {% endfor %}
+                        </div>
 
-                        <button type="submit">Finish</button>
+                        <button type="submit">Finish</button><br/>
+
+                        {% if form.fileName.errors %}
+                            <br/> {{ form.fileName.errors|striptags }}
+                        {% endif %}
                         <div class="spacer"></div>
                     </form>
                 </div>

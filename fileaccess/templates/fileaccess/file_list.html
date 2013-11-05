@@ -1,6 +1,7 @@
 <html>
     <head>
-        <link href="{{STATIC_URL}}fileaccess/styles.css" rel="stylesheet" type="text/css">
+        {% load static from staticfiles %}
+        <link href="{% static 'fileaccess/styles.css' %}" rel="stylesheet" type="text/css">
         <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
     </head>
 	<body>
